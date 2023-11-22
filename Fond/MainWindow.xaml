@@ -1,0 +1,41 @@
+﻿<Window x:Class="Fond.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Fond"
+        xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="1100" WindowState="Maximized">
+
+    <Window.DataContext>
+        <local:FondsData/>
+    </Window.DataContext>
+    <Window.Resources>
+        <Style x:Key="DataGridStyle" TargetType="{x:Type DataGrid}">
+            <Setter Property="ColumnHeaderStyle" Value="{DynamicResource ColumnHeaderStyle}"/>
+        </Style>
+        <Style x:Key="ColumnHeaderStyle" TargetType="DataGridColumnHeader">
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="16"/>
+
+        </Style>
+    </Window.Resources>
+    <Grid >
+
+        <DataGrid x:Name="GridFond" AutoGenerateColumns="False"  RowBackground="White" RowHeight="30" HorizontalGridLinesBrush="LightGray" VerticalGridLinesBrush="LightGray"
+              ItemsSource="{Binding FondParamCollection}" Style="{DynamicResource  ResourceKey= DataGridStyle}"  IsReadOnly="True"  MouseDoubleClick="GridFond_MouseDoubleClick">
+            <DataGrid.Columns>
+
+                <DataGridTextColumn Header="ID" Binding="{Binding  ID}" Width="60" Visibility="Hidden" FontFamily="Arial Cyr" FontSize="15" />
+                <DataGridTextColumn Header="Год" Binding="{Binding God}" Width="60" FontFamily="Arial Cyr"  FontSize="15"/>
+                <DataGridTextColumn Header="Номер договора" Binding="{Binding Nomer}" Width="140" FontFamily="Arial Cyr"  FontSize="15"/>
+                <DataGridTextColumn Header="Название" Binding="{Binding Name}" Width="1200" FontFamily="Arial Cyr"  FontSize="15"/>
+                <DataGridTextColumn Header="Организация" Binding="{Binding Organization}" Width="auto" FontFamily="Arial Cyr" FontSize="15"/>
+
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+
+
+</Window>

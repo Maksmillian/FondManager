@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище GISModelContainer" CdmEntityContainer="GISEntities">
+    <EntitySetMapping Name="Фонды_отчёты">
+      <EntityTypeMapping TypeName="GISModel.Фонды_отчёты">
+        <MappingFragment StoreEntitySet="Фонды_отчёты">
+          <ScalarProperty Name="ID_отчёта" ColumnName="ID_отчёта" />
+          <ScalarProperty Name="Год_договора" ColumnName="Год_договора" />
+          <ScalarProperty Name="Номер_договора" ColumnName="Номер_договора" />
+          <ScalarProperty Name="Название" ColumnName="Название" />
+          <ScalarProperty Name="Организации" ColumnName="Организации" />
+          <ScalarProperty Name="Ответственный_исполнитель" ColumnName="Ответственный_исполнитель" />
+          <ScalarProperty Name="Примечание" ColumnName="Примечание" />
+          <ScalarProperty Name="Ссылка_корневая" ColumnName="Ссылка_корневая" />
+          <ScalarProperty Name="Ссылка_текст_отчета" ColumnName="Ссылка_текст_отчета" />
+          <ScalarProperty Name="Ссылка_таблицы" ColumnName="Ссылка_таблицы" />
+          <ScalarProperty Name="Ссылка_графические" ColumnName="Ссылка_графические" />
+          <ScalarProperty Name="Ключевые_слова" ColumnName="Ключевые_слова" />
+          <ScalarProperty Name="Аннотация" ColumnName="Аннотация" />
+          <ScalarProperty Name="Пользователь" ColumnName="Пользователь" />
+          <ScalarProperty Name="Дата_заполнения" ColumnName="Дата_заполнения" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

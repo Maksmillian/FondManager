@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище GISModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Фонды_отчёты">
+          <Key>
+            <PropertyRef Name="ID_отчёта" />
+          </Key>
+          <Property Name="ID_отчёта" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Год_договора" Type="int" />
+          <Property Name="Номер_договора" Type="varchar" MaxLength="100" />
+          <Property Name="Название" Type="nvarchar(max)" />
+          <Property Name="Организации" Type="varchar" MaxLength="100" />
+          <Property Name="Ответственный_исполнитель" Type="varchar" MaxLength="50" />
+          <Property Name="Примечание" Type="varchar" MaxLength="50" />
+          <Property Name="Ссылка_корневая" Type="nvarchar(max)" />
+          <Property Name="Ссылка_текст_отчета" Type="nvarchar(max)" />
+          <Property Name="Ссылка_таблицы" Type="nvarchar(max)" />
+          <Property Name="Ссылка_графические" Type="nvarchar(max)" />
+          <Property Name="Ключевые_слова" Type="varchar(max)" />
+          <Property Name="Аннотация" Type="nvarchar(max)" />
+          <Property Name="Пользователь" Type="varchar" MaxLength="50" />
+          <Property Name="Дата_заполнения" Type="datetime" />
+        </EntityType>
+        <EntityContainer Name="Хранилище GISModelContainer">
+          <EntitySet Name="Фонды_отчёты" EntityType="Self.Фонды_отчёты" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="GISModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Фонды_отчёты">
+          <Key>
+            <PropertyRef Name="ID_отчёта" />
+          </Key>
+          <Property Name="ID_отчёта" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Год_договора" Type="Int32" />
+          <Property Name="Номер_договора" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Название" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Организации" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Ответственный_исполнитель" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Примечание" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Ссылка_корневая" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ссылка_текст_отчета" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ссылка_таблицы" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ссылка_графические" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ключевые_слова" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Аннотация" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Пользователь" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Дата_заполнения" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityContainer Name="GISEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Фонды_отчёты" EntityType="Self.Фонды_отчёты" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище GISModelContainer" CdmEntityContainer="GISEntities">
+          <EntitySetMapping Name="Фонды_отчёты">
+            <EntityTypeMapping TypeName="GISModel.Фонды_отчёты">
+              <MappingFragment StoreEntitySet="Фонды_отчёты">
+                <ScalarProperty Name="ID_отчёта" ColumnName="ID_отчёта" />
+                <ScalarProperty Name="Год_договора" ColumnName="Год_договора" />
+                <ScalarProperty Name="Номер_договора" ColumnName="Номер_договора" />
+                <ScalarProperty Name="Название" ColumnName="Название" />
+                <ScalarProperty Name="Организации" ColumnName="Организации" />
+                <ScalarProperty Name="Ответственный_исполнитель" ColumnName="Ответственный_исполнитель" />
+                <ScalarProperty Name="Примечание" ColumnName="Примечание" />
+                <ScalarProperty Name="Ссылка_корневая" ColumnName="Ссылка_корневая" />
+                <ScalarProperty Name="Ссылка_текст_отчета" ColumnName="Ссылка_текст_отчета" />
+                <ScalarProperty Name="Ссылка_таблицы" ColumnName="Ссылка_таблицы" />
+                <ScalarProperty Name="Ссылка_графические" ColumnName="Ссылка_графические" />
+                <ScalarProperty Name="Ключевые_слова" ColumnName="Ключевые_слова" />
+                <ScalarProperty Name="Аннотация" ColumnName="Аннотация" />
+                <ScalarProperty Name="Пользователь" ColumnName="Пользователь" />
+                <ScalarProperty Name="Дата_заполнения" ColumnName="Дата_заполнения" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

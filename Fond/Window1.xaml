@@ -1,0 +1,62 @@
+﻿<Window x:Class="Fond.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Fond"
+        mc:Ignorable="d"
+        Title="Window1" Width="1442" Height="714.5" ResizeMode="NoResize" Closing="Window_Closing">
+   
+    <Window.Resources>
+        <Style x:Key="FontTextbox" TargetType="TextBox">
+            <Setter Property="FontFamily" Value="Arial Cyr"/>
+            <Setter Property="FontSize" Value="15"/>
+        </Style>
+        <Style x:Key="FontTextBlock" TargetType="TextBlock">
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="13"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid  Loaded="Grid_Loaded">
+
+        <Canvas x:Name="Canvas" Background="AliceBlue"   >
+            <Button x:Name="ButtRedact" Content="Редактировать отчёт" Background="Bisque" Height="30" Width="150" Canvas.Left="750" Canvas.Top="30" FontFamily="Arial Cyr" FontSize="15" Click="ButtRedact_Click"/>
+            <Button x:Name="ButtSave" Content="Сохранить изменения" Background="LightGreen" Height="30" Width="150" Canvas.Left="550" Canvas.Top="30" FontFamily="Arial Cyr" FontSize="15" Click="ButtSave_Click"  />
+            <Button  x:Name="ButtBack" Content="Назад" Background="SkyBlue" Height="20" Width="50"  FontFamily="Arial Cyr" FontSize="15" Canvas.Left="1370"  Canvas.Top="10" Click="ButtBack_Click"/>
+
+            <TextBlock Text="Год отчёта" Canvas.Top="30" Canvas.Left="20"  Style="{DynamicResource FontTextBlock}" />
+            <TextBox x:Name="tb_god" Text="" TextWrapping="Wrap" MaxWidth="350" Width="350" Canvas.Top="30" Canvas.Left="150" Height="30" Style="{DynamicResource FontTextbox}"  IsReadOnly="True" />
+
+            <TextBlock Text="Номер отчёта" Canvas.Top="90" Canvas.Left="20" Style="{DynamicResource FontTextBlock}" />
+            <TextBox x:Name="tb_nomer" Text="" TextWrapping="Wrap" MaxWidth="350" Width="350" Canvas.Top="90" Canvas.Left="150" Height="30" Style="{DynamicResource FontTextbox}" IsReadOnly="True" />
+
+            <TextBlock Text="Название" Canvas.Top="150" Canvas.Left="20" Style="{DynamicResource FontTextBlock}" />
+            <TextBox x:Name="tb_name" Text="" TextWrapping="Wrap" Width="750" Height="60" Canvas.Top="150" Canvas.Left="150"  Style="{DynamicResource FontTextbox}" IsReadOnly="True"/>
+
+            <TextBlock Text="Организации" Canvas.Top="250" Canvas.Left="20" Style="{DynamicResource FontTextBlock}" />
+            <TextBox x:Name="tb_org" Text="" TextWrapping="Wrap" Canvas.Top="250" Canvas.Left="150" MinWidth="350"  MaxWidth="350" Width="350" Style="{DynamicResource FontTextbox}" MinHeight="30" IsReadOnly="True"/>
+
+            <TextBlock Text="Ответственные исполнители" TextWrapping="Wrap" Canvas.Top="325" Canvas.Left="20" Width="100" Style="{DynamicResource FontTextBlock}" />
+            <TextBox x:Name="tb_isp" Text="" TextWrapping="Wrap" MaxWidth="350" Width="350" Canvas.Top="325" Canvas.Left="150" Height="30"  Style="{DynamicResource FontTextbox}" IsReadOnly="True"/>
+
+            <TextBlock Text="Примечание"  Canvas.Top="400" Canvas.Left="20" Width="100" Style="{DynamicResource FontTextBlock}" />
+            <TextBox x:Name="tb_prim" Text="" TextWrapping="Wrap" Canvas.Top="400" Canvas.Left="150" MaxWidth="350" Width="350" Height="30" Style="{DynamicResource FontTextbox}" IsReadOnly="True"/>
+
+            <TextBlock Text="Ключевые слова"  Canvas.Top="475" Canvas.Left="20" Width="100" Style="{DynamicResource FontTextBlock}" />
+            <TextBox x:Name="tb_slova" Text="" TextWrapping="Wrap" Canvas.Top="475" Canvas.Left="150" MinWidth="350" MaxWidth="350" MinHeight="30" Style="{DynamicResource FontTextbox}" IsReadOnly="True"/>
+
+            <TextBlock Text="Аннотация"  Canvas.Top="220" Canvas.Left="550" Width="100" Style="{DynamicResource FontTextBlock}" />
+            <TextBox x:Name="tb_annot" Text="" TextWrapping="Wrap" Canvas.Top="250" Canvas.Left="550" Canvas.Bottom="5" MinWidth="350" MaxWidth="350" Width="350" Style="{DynamicResource FontTextbox}" MinHeight="280" Height="406" IsReadOnly="True"/>
+
+            <ListBox x:Name="ListBoxFile" Height="626" Width="490" Canvas.Top="30" Canvas.Left="930" ScrollViewer.HorizontalScrollBarVisibility="Disabled" FontSize="15" MouseDoubleClick="ListBoxFile_MouseDoubleClick" >
+                
+                <!--<ListBoxItem>
+                    <Image Source="/Image/Excel-logo.jpg" Width="50"/>
+                    <Image Source="C:\Users\ilichevma\source\repos\Fond\Fond\Image\Excel-Logo.jpg" Width="30"/>
+
+                </ListBoxItem>-->
+            </ListBox>
+        </Canvas>
+    </Grid>
+</Window>
